@@ -14,6 +14,7 @@
 		D3BF30AD235AC4EF00112633 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3BF30AB235AC4EF00112633 /* LaunchScreen.storyboard */; };
 		D3BF30B5235AD08500112633 /* Songs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF30B4235AD08500112633 /* Songs.swift */; };
 		D3BF30B7235AD2A800112633 /* SongsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF30B6235AD2A800112633 /* SongsAPI.swift */; };
+		D3BF30B9235AD4F500112633 /* SongsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF30B8235AD4F500112633 /* SongsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		D3BF30AE235AC4EF00112633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3BF30B4235AD08500112633 /* Songs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Songs.swift; sourceTree = "<group>"; };
 		D3BF30B6235AD2A800112633 /* SongsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsAPI.swift; sourceTree = "<group>"; };
+		D3BF30B8235AD4F500112633 /* SongsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				D3BF30AE235AC4EF00112633 /* Info.plist */,
 				D3BF30B4235AD08500112633 /* Songs.swift */,
 				D3BF30B6235AD2A800112633 /* SongsAPI.swift */,
+				D3BF30B8235AD4F500112633 /* SongsTableViewCell.swift */,
 			);
 			path = CustomItunes;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3BF30B9235AD4F500112633 /* SongsTableViewCell.swift in Sources */,
 				D3BF30B5235AD08500112633 /* Songs.swift in Sources */,
 				D3BF30A5235AC4EE00112633 /* MyTableViewController.swift in Sources */,
 				D3BF30B7235AD2A800112633 /* SongsAPI.swift in Sources */,

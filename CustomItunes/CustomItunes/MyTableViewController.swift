@@ -15,7 +15,8 @@ class MyTableViewController: UIViewController, UITableViewDelegate, UITableViewD
         return tableView
     }()
     
-    var cellId = "cellId"
+    var cellId = "SongCell"
+    
     private let songs = SongsAPI.getSongs()
     
     override func viewDidLoad() {
@@ -32,9 +33,13 @@ class MyTableViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
+    
+
+    
+    
     func setupTableView(){
         myTableView.frame = view.frame
-        myTableView.register(UITableViewCell.self, forCellReuseIdentifier: cellId)
+        myTableView.register(SongsTableViewCell.self, forCellReuseIdentifier: cellId)
         myTableView.delegate = self
         myTableView.dataSource = self
         view.addSubview(myTableView)
@@ -53,13 +58,17 @@ class MyTableViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = myTableView.dequeueReusableCell(withIdentifier: cellId)
-        cell?.textLabel?.text = songs[indexPath.row].name
-        return cell!
+        let cell = myTableView.dequeueReusableCell(withIdentifier: cellId) as! SongsTableViewCell
+        cell.textLabel?.text = songs[indexPath.row].name
+        cell.pauseBtn.tag = indexPath.row
+        cell.song = songs[indexPath.row]
+        
+        return cell
     }
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 150
-//    }
+   
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     
     
 

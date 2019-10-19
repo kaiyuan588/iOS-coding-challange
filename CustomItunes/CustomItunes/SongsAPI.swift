@@ -12,8 +12,8 @@ import Foundation
 class SongsAPI {
     static func getSongs() -> [Songs]{
         let songs = [
-        Songs(name: "kaiyuan"),
-        Songs(name: "sihan")
+        Songs(name: "kaiyuan", pause: "aa"),
+        Songs(name: "sihan", pause: "bb")
         ]
         return songs
     }

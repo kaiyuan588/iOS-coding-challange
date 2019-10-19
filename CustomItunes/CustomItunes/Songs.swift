@@ -10,6 +10,7 @@ import Foundation
 
 struct Songs {
     let name: String?
+    let pause: String?
 }
 
 
