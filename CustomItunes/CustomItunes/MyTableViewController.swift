@@ -50,10 +50,6 @@ class MyTableViewController: UIViewController, UITableViewDelegate, UITableViewD
                 print(error)
             }
         }
-    
-
-    
-    
     func setupTableView(){
         myTableView.frame = view.frame
         myTableView.register(SongsTableViewCell.self, forCellReuseIdentifier: cellId)

@@ -16,10 +16,7 @@ class SongsTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         setupConstraint()
-
-        
      }
 
      required init?(coder aDecoder: NSCoder) {
@@ -45,7 +42,6 @@ class SongsTableViewCell: UITableViewCell {
         nameLabel.topAnchor.constraint(equalTo:self.containerView.topAnchor).isActive = true
         nameLabel.leadingAnchor.constraint(equalTo:self.profileImageView.trailingAnchor, constant: 20).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo:self.containerView.trailingAnchor).isActive = true
-        
         
         pauseBtn.widthAnchor.constraint(equalToConstant:50).isActive = true
         pauseBtn.heightAnchor.constraint(equalToConstant:50).isActive = true
