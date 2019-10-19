@@ -16,14 +16,21 @@ class MyTableViewController: UIViewController, UITableViewDelegate, UITableViewD
     }()
     
     var cellId = "cellId"
-    
+    private let songs = SongsAPI.getSongs()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupTableView()
+        setupNavigation()
     }
-    
+    func setupNavigation(){
+        navigationItem.title = "Media"
+        self.navigationController?.navigationBar.barTintColor = .lightGray
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.black]
+        
+    }
     
     func setupTableView(){
         myTableView.frame = view.frame
@@ -31,23 +38,28 @@ class MyTableViewController: UIViewController, UITableViewDelegate, UITableViewD
         myTableView.delegate = self
         myTableView.dataSource = self
         view.addSubview(myTableView)
+        myTableView.translatesAutoresizingMaskIntoConstraints = false
+        
+        myTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        myTableView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor).isActive = true
+        myTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        myTableView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor).isActive = true
+
     }
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return songs.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myTableView.dequeueReusableCell(withIdentifier: cellId)
-       
-        
-        cell?.translatesAutoresizingMaskIntoConstraints = false
+        cell?.textLabel?.text = songs[indexPath.row].name
         return cell!
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 150
+//    }
     
     
 
