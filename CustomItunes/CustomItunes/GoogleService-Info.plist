@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1046624499763-n960jbtjct26ik7clkc87ku8uekrg37a.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1046624499763-n960jbtjct26ik7clkc87ku8uekrg37a</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBE6fKRMMCwuzEUrscVnzJSnLrj86kBMA0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1046624499763</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Northeastern.CustomItunes</string>
+	<key>PROJECT_ID</key>
+	<string>music-app-47c55</string>
+	<key>STORAGE_BUCKET</key>
+	<string>music-app-47c55.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1046624499763:ios:9a70929f4103b101474b46</string>
+	<key>DATABASE_URL</key>
+	<string>https://music-app-47c55.firebaseio.com</string>
+</dict>
+</plist>
