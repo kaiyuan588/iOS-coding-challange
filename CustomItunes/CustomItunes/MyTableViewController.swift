@@ -76,8 +76,8 @@ class MyTableViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myTableView.dequeueReusableCell(withIdentifier: cellId) as! SongsTableViewCell
-        cell.textLabel?.text = songs[indexPath.row].name
-        cell.pauseBtn.tag = indexPath.row
+//        cell.textLabel?.text = songs[indexPath.row].name
+//        cell.pauseBtn.tag = indexPath.row
         cell.song = songs[indexPath.row]
         
         return cell

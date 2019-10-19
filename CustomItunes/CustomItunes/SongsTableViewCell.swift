@@ -39,11 +39,11 @@ class SongsTableViewCell: UITableViewCell {
         
         containerView.centerYAnchor.constraint(equalTo:self.contentView.centerYAnchor).isActive = true
         containerView.leadingAnchor.constraint(equalTo:self.profileImageView.trailingAnchor, constant:10).isActive = true
-        containerView.trailingAnchor.constraint(equalTo:pauseBtn.leadingAnchor, constant:-150).isActive = true
+        containerView.trailingAnchor.constraint(equalTo:pauseBtn.leadingAnchor).isActive = true
         containerView.heightAnchor.constraint(equalToConstant:40).isActive = true
         
         nameLabel.topAnchor.constraint(equalTo:self.containerView.topAnchor).isActive = true
-        nameLabel.leadingAnchor.constraint(equalTo:self.containerView.leadingAnchor).isActive = true
+        nameLabel.leadingAnchor.constraint(equalTo:self.profileImageView.trailingAnchor, constant: 20).isActive = true
         nameLabel.trailingAnchor.constraint(equalTo:self.containerView.trailingAnchor).isActive = true
         
         
@@ -83,6 +83,8 @@ class SongsTableViewCell: UITableViewCell {
             label.font = UIFont.boldSystemFont(ofSize: 20)
             label.textColor = .black
             label.translatesAutoresizingMaskIntoConstraints = false
+            label.numberOfLines = 0;
+            label.lineBreakMode = NSLineBreakMode.byWordWrapping
             return label
     }()
     
