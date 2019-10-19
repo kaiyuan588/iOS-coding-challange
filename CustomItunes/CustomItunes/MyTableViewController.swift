@@ -38,9 +38,11 @@ class MyTableViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private func fetchData(){
         let feedParser = FeedParser()
-        feedParser.parseXML(url: "http://feeds.skynews.com/feeds/rss/technology.xml") { (rssitems) in
+        feedParser.parseXML(url: "https://rss.itunes.apple.com/api/v1/cn/apple-music/coming-soon/all/100/explicit.rss") { (rssitems) in
             self.rssItems = rssitems
-            self.myTableView.reloadSections(IndexSet(integer: 0), with: .left)
+            OperationQueue.main.addOperation {
+                self.myTableView.reloadSections(IndexSet(integer: 0), with: .left)
+            }
         }
     }
     func setupNavigation(){
@@ -79,14 +81,19 @@ class MyTableViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return songs.count
+        
+        guard let rssItems = rssItems else {
+            return 0
+        }
+        return rssItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = myTableView.dequeueReusableCell(withIdentifier: cellId) as! SongsTableViewCell
-//        cell.textLabel?.text = songs[indexPath.row].name
-//        cell.pauseBtn.tag = indexPath.row
-        cell.song = songs[indexPath.row]
+        if let item = rssItems?[indexPath.item] {
+            cell.item = item
+        }
+//        cell.song = songs[indexPath.row]
         
         return cell
     }
