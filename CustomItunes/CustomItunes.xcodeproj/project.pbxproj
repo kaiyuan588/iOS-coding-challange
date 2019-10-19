@@ -15,6 +15,8 @@
 		D3BF30B5235AD08500112633 /* Songs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF30B4235AD08500112633 /* Songs.swift */; };
 		D3BF30B7235AD2A800112633 /* SongsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF30B6235AD2A800112633 /* SongsAPI.swift */; };
 		D3BF30B9235AD4F500112633 /* SongsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF30B8235AD4F500112633 /* SongsTableViewCell.swift */; };
+		D3BF30C0235AFBA600112633 /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D3BF30BE235AFA8400112633 /* sample.mp3 */; };
+		D3BF30C1235AFE1B00112633 /* sample.mp3 in Sources */ = {isa = PBXBuildFile; fileRef = D3BF30BE235AFA8400112633 /* sample.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,7 @@
 		D3BF30B4235AD08500112633 /* Songs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Songs.swift; sourceTree = "<group>"; };
 		D3BF30B6235AD2A800112633 /* SongsAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsAPI.swift; sourceTree = "<group>"; };
 		D3BF30B8235AD4F500112633 /* SongsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsTableViewCell.swift; sourceTree = "<group>"; };
+		D3BF30BE235AFA8400112633 /* sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sample.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +72,17 @@
 				D3BF30B4235AD08500112633 /* Songs.swift */,
 				D3BF30B6235AD2A800112633 /* SongsAPI.swift */,
 				D3BF30B8235AD4F500112633 /* SongsTableViewCell.swift */,
+				D3BF30BA235AF32400112633 /* music */,
 			);
 			path = CustomItunes;
+			sourceTree = "<group>";
+		};
+		D3BF30BA235AF32400112633 /* music */ = {
+			isa = PBXGroup;
+			children = (
+				D3BF30BE235AFA8400112633 /* sample.mp3 */,
+			);
+			path = music;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3BF30C0235AFBA600112633 /* sample.mp3 in Resources */,
 				D3BF30AD235AC4EF00112633 /* LaunchScreen.storyboard in Resources */,
 				D3BF30AA235AC4EF00112633 /* Assets.xcassets in Resources */,
 			);
@@ -143,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3BF30C1235AFE1B00112633 /* sample.mp3 in Sources */,
 				D3BF30B9235AD4F500112633 /* SongsTableViewCell.swift in Sources */,
 				D3BF30B5235AD08500112633 /* Songs.swift in Sources */,
 				D3BF30A5235AC4EE00112633 /* MyTableViewController.swift in Sources */,

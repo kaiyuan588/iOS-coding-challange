@@ -8,16 +8,20 @@
 
 import Foundation
 import UIKit
+import AVFoundation
+
 class SongsTableViewCell: UITableViewCell {
-    
-    
+ 
+    var isOn = false
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         setupConstraint()
+
         
      }
+
      required init?(coder aDecoder: NSCoder) {
        super.init(coder: aDecoder)
     }
@@ -47,6 +51,8 @@ class SongsTableViewCell: UITableViewCell {
         pauseBtn.heightAnchor.constraint(equalToConstant:50).isActive = true
         pauseBtn.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 20).isActive = true
         pauseBtn.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -20).isActive = true
+        pauseBtn.addTarget(self, action: #selector(btnTapped), for: .touchUpInside)
+
     }
     
     
@@ -64,8 +70,8 @@ class SongsTableViewCell: UITableViewCell {
     
     let profileImageView:UIImageView = {
         let img = UIImageView()
-        img.contentMode = .scaleAspectFill // image will never be strecthed vertially or horizontally
-        img.translatesAutoresizingMaskIntoConstraints = false // enable autolayout
+        img.contentMode = .scaleAspectFill
+        img.translatesAutoresizingMaskIntoConstraints = false
         img.layer.cornerRadius = 35
         img.clipsToBounds = true
        return img
@@ -83,13 +89,13 @@ class SongsTableViewCell: UITableViewCell {
 
     
     let pauseBtn: UIButton = {
+        
         let btn = UIButton(type: .system)
-        btn.setImage(UIImage(named: "pause"), for: .normal)
         btn.contentMode = .scaleAspectFill
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.layer.cornerRadius = 13
         btn.clipsToBounds = true
-        btn.addTarget(self, action: #selector(btnTapped), for: .touchUpInside)
+        btn.setBackgroundImage(UIImage(named: "pause"), for: .normal)
 
         return btn
     }()
@@ -97,13 +103,24 @@ class SongsTableViewCell: UITableViewCell {
     let containerView:UIView = {
       let view = UIView()
       view.translatesAutoresizingMaskIntoConstraints = false
-      view.clipsToBounds = true // this will make sure its children do not go out of the boundary
+      view.clipsToBounds = true
       return view
     }()
     
     @objc func btnTapped(_ sender: UIButton){
            print("btn tapped")
+        activeBtn(bool: !isOn)
     }
-    
+    func activeBtn(bool: Bool){
+        isOn = bool
+        let image = bool ? UIImage(named: "stop") : UIImage(named: "pause")
+        if isOn {
+            MyTableViewController.audioPlayer.play()
+        }else {
+            MyTableViewController.audioPlayer.stop()
+        }
+        pauseBtn.setBackgroundImage(image, for: .normal)
+
+    }
     
 }

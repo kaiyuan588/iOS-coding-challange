@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MyTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -19,11 +20,16 @@ class MyTableViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     private let songs = SongsAPI.getSongs()
     
+    static var audioPlayer : AVAudioPlayer!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupTableView()
         setupNavigation()
+        
+        playingSoundWith(fileName: "sample")
+        
     }
     func setupNavigation(){
         navigationItem.title = "Media"
@@ -33,6 +39,17 @@ class MyTableViewController: UIViewController, UITableViewDelegate, UITableViewD
         
     }
     
+
+
+        func playingSoundWith(fileName: String) {
+            do {
+                MyTableViewController.audioPlayer = try AVAudioPlayer(contentsOf: Bundle.main.url(forResource: fileName, withExtension: "mp3")!)
+                MyTableViewController.audioPlayer.prepareToPlay()
+                
+            } catch {
+                print(error)
+            }
+        }
     
 
     
