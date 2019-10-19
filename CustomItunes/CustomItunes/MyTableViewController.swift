@@ -17,6 +17,8 @@ class MyTableViewController: UIViewController, UITableViewDelegate, UITableViewD
     }()
     
     var cellId = "SongCell"
+    private var rssItems: [RSSItem]?
+    
     
     private let songs = SongsAPI.getSongs()
     
@@ -29,7 +31,17 @@ class MyTableViewController: UIViewController, UITableViewDelegate, UITableViewD
         setupNavigation()
         
         playingSoundWith(fileName: "sample")
-        
+        fetchData()
+    }
+    
+    
+    
+    private func fetchData(){
+        let feedParser = FeedParser()
+        feedParser.parseXML(url: "http://feeds.skynews.com/feeds/rss/technology.xml") { (rssitems) in
+            self.rssItems = rssitems
+            self.myTableView.reloadSections(IndexSet(integer: 0), with: .left)
+        }
     }
     func setupNavigation(){
         navigationItem.title = "Media"
