@@ -71,7 +71,7 @@ class FeedParser: NSObject, XMLParserDelegate{
         switch currentElement {
         case "title": currentName += string
         case "category": currentType += string
-        case "link" : currentImage += string
+        case "description" : currentImage += string
         default: break
         }
     }
