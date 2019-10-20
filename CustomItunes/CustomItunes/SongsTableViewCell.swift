@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import AVFoundation
 
-class SongsTableViewCell: UITableViewCell {
+class SongsTableViewCell: UITableViewCell{
  
     var isOn = false
     
@@ -26,8 +26,10 @@ class SongsTableViewCell: UITableViewCell {
     
     var item: RSSItem! {
         didSet {
+            
             nameLabel.text = item.name
             typeLabel.text = item.type
+//            profileImageView.loadImage(url: imageLabel.text!)
             imageLabel.text = item.image
         }
     }
@@ -59,28 +61,15 @@ class SongsTableViewCell: UITableViewCell {
 //        typeLabel.addTarget(self, action: #selector(btnTapped), for: .touchUpInside)
 
     }
-    
-    
-//    var song: Songs? {
-//        didSet {
-//            guard let songItem = song else {return}
-//            if let name = songItem.name {
-//                profileImageView.image = UIImage(named: "musicPhoto")
-//                nameLabel.text = name
-//            }
-//
-//
-//        }
-//    }
-    
-//    let profileImageView:UIImageView = {
-//        let img = UIImageView()
-//        img.contentMode = .scaleAspectFill
-//        img.translatesAutoresizingMaskIntoConstraints = false
-//        img.layer.cornerRadius = 35
-//        img.clipsToBounds = true
-//       return img
-//    }()
+
+    let profileImageView: UIImageView = {
+        let img = UIImageView()
+        img.contentMode = .scaleAspectFill
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.layer.cornerRadius = 35
+        img.clipsToBounds = true
+       return img
+    }()
     
     
     let nameLabel:UILabel = {
@@ -122,6 +111,9 @@ class SongsTableViewCell: UITableViewCell {
         return label
     }()
     
+
+
+    
 //    @objc func btnTapped(_ sender: UIButton){
 //           print("btn tapped")
 //        activeBtn(bool: !isOn)
@@ -139,3 +131,4 @@ class SongsTableViewCell: UITableViewCell {
 //    }
     
 }
+

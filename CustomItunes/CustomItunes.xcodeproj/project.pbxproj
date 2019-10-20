@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AD4258FC79807EDB6AF4BB9D /* Pods_CustomItunes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E11D0C6DE2E630AA761A85 /* Pods_CustomItunes.framework */; };
 		D3460512235BC651007E81A6 /* RssXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3460511235BC651007E81A6 /* RssXMLParser.swift */; };
+		D3460514235BDCA6007E81A6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3460513235BDCA6007E81A6 /* Extensions.swift */; };
 		D3882687235BA2F200404C9C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3882686235BA2F200404C9C /* GoogleService-Info.plist */; };
 		D3BF30A1235AC4EE00112633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF30A0235AC4EE00112633 /* AppDelegate.swift */; };
 		D3BF30A3235AC4EE00112633 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BF30A2235AC4EE00112633 /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 		5BF7453CD1988C006985BC7B /* Pods-CustomItunes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CustomItunes.debug.xcconfig"; path = "Target Support Files/Pods-CustomItunes/Pods-CustomItunes.debug.xcconfig"; sourceTree = "<group>"; };
 		69E11D0C6DE2E630AA761A85 /* Pods_CustomItunes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CustomItunes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3460511235BC651007E81A6 /* RssXMLParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssXMLParser.swift; sourceTree = "<group>"; };
+		D3460513235BDCA6007E81A6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D3882686235BA2F200404C9C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3BF309D235AC4EE00112633 /* CustomItunes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomItunes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3BF30A0235AC4EE00112633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				D3BF30B6235AD2A800112633 /* SongsAPI.swift */,
 				D3460511235BC651007E81A6 /* RssXMLParser.swift */,
 				D3BF30B8235AD4F500112633 /* SongsTableViewCell.swift */,
+				D3460513235BDCA6007E81A6 /* Extensions.swift */,
 				D3882686235BA2F200404C9C /* GoogleService-Info.plist */,
 				D3BF30BA235AF32400112633 /* music */,
 			);
@@ -232,6 +235,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3BF30C1235AFE1B00112633 /* sample.mp3 in Sources */,
+				D3460514235BDCA6007E81A6 /* Extensions.swift in Sources */,
 				D3BF30B9235AD4F500112633 /* SongsTableViewCell.swift in Sources */,
 				D3BF30B5235AD08500112633 /* Songs.swift in Sources */,
 				D3460512235BC651007E81A6 /* RssXMLParser.swift in Sources */,

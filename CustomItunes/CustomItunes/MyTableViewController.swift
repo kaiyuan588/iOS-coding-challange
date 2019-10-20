@@ -23,22 +23,19 @@ class MyTableViewController: UIViewController, UITableViewDelegate, UITableViewD
     private let songs = SongsAPI.getSongs()
     
     static var audioPlayer : AVAudioPlayer!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         setupTableView()
         setupNavigation()
-        
         playingSoundWith(fileName: "sample")
         fetchData()
     }
     
-    
-    
+
     private func fetchData(){
         let feedParser = FeedParser()
-        feedParser.parseXML(url: "https://rss.itunes.apple.com/api/v1/cn/apple-music/coming-soon/all/100/explicit.rss") { (rssitems) in
+        feedParser.parseXML(url: "https://rss.itunes.apple.com/api/v1/cn/apple-music/coming-soon/all/100/non-explicit.rss") { (rssitems) in
             self.rssItems = rssitems
             OperationQueue.main.addOperation {
                 self.myTableView.reloadSections(IndexSet(integer: 0), with: .left)
@@ -93,18 +90,12 @@ class MyTableViewController: UIViewController, UITableViewDelegate, UITableViewD
         if let item = rssItems?[indexPath.item] {
             cell.item = item
         }
-//        cell.song = songs[indexPath.row]
-        
         return cell
     }
    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-    
-    
-    // testing
-
 
 }
 
