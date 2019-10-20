@@ -79,7 +79,8 @@ class FeedParser: NSObject, XMLParserDelegate{
     
     func parser(_ parser: XMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName qName: String?) {
         if elementName == "item" {
-            let rssItem = RSSItem(name: currentName, image: currentImage, type: currentType)
+            let subString = currentType.split{$0.isNewline}
+            let rssItem = RSSItem(name: currentName, image: currentImage, type: String((subString[subString.count - 2])))
             self.rssItems.append(rssItem)
         }
         

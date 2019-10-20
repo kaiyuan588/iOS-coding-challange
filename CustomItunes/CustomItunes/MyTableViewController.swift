@@ -35,7 +35,7 @@ class MyTableViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     private func fetchData(){
         let feedParser = FeedParser()
-        feedParser.parseXML(url: "https://rss.itunes.apple.com/api/v1/cn/apple-music/coming-soon/all/100/non-explicit.rss") { (rssitems) in
+        feedParser.parseXML(url: "https://rss.itunes.apple.com/api/v1/us/itunes-music/hot-tracks/all/25/explicit.rss") { (rssitems) in
             self.rssItems = rssitems
             OperationQueue.main.addOperation {
                 self.myTableView.reloadSections(IndexSet(integer: 0), with: .left)
